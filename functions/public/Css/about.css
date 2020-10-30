@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-shadow: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hamburger menu Button CSS */
+
+.sidebar {
+  position: fixed;
+  width: 240px;
+  left: -240px;
+  height: 100%;
+  background: #1e1e1e;
+  transition: all .5s ease;
+  z-index: 9999;
+}
+
+.sidebar header {
+  font-size: 28px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #1b1b1b;
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 9999;
+}
+
+.sidebar a {
+  display: block;
+  height: 65px;
+  width: 100%;
+  color: white;
+  line-height: 65px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-left: 5px solid transparent;
+  font-family: 'Open Sans', sans-serif;
+  transition: all .5s ease;
+  z-index: 9999;
+  text-decoration: none;
+}
+
+a.active,a:hover {
+  border-left: 5px solid #b93632;
+  color: #b93632;
+  z-index: 9999;
+}
+
+.sidebar a i {
+  font-size: 23px;
+  margin-right: 16px;
+  z-index: 9999;
+}
+
+.sidebar a span {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 9999;
+}
+
+#check {
+  display: none;
+}
+
+label #btn,label #cancel {
+  position: fixed;
+  cursor: pointer;
+  color: white;
+  border-radius: 0;
+  margin-left: auto;
+  border: 1px rgba(0,0,0,0.3);
+  margin: 15px 30px;
+  font-size: 29px;
+  background: rgba(0,0,0,0.3);
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  line-height: 45px;
+  transition: all .5s ease;
+  z-index: 9999;
+}
+
+label #cancel {
+  opacity: 0;
+  visibility: hidden;
+  background:rgba(130,10,10,0.8) ;
+}
+#check:checked ~ .sidebar {
+  left: -30px;
+}
+#check:checked ~ label #btn {
+  margin-left: 245px;
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ label #cancel {
+  margin-left: 245px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Advance MenuBar MediaQuery */
+
+/*
+
+@media(max-width : 860px){
+  .sidebar{
+    height: auto;
+    width: 70px;
+    left: 0;
+    margin: 100px 0;
+  }
+  header,#btn,#cancel{
+    display: none;
+  }
+  span{
+    position: absolute;
+    margin-left: 23px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .sidebar a{
+    height: 60px;
+  }
+  .sidebar a i{
+    margin-left: -10px;
+  }
+  a:hover {
+    width: 200px;
+    background: inherit;
+  }
+  .sidebar a:hover span{
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+*/
+
+
+/* --------------------------------- */
+
+/* ---- landing page My image CSS ---- */
+
+#main-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  box-sizing: content-box;
+  background: #fff;
+}
+
+.left-main {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  background: #fff;
+}
+
+.left-main img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  background-size: cover;
+  overflow: hidden;
+  overflow-x: wrap;
+}
+
+.right-main {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #000;
+}
+
+.right-main h2 {
+  color: #000;
+  opacity: 0;
+  transition: 1s ease-in;
+}
+
+.right-main h2[data-scroll="in"] {
+  opacity: 1;
+}
+
+#main-container h2:nth-child(1) {
+
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: #fff;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  transition: 1s ease-in;
+
+}
+
+#main-container h2[data-scroll="in"] {
+  opacity: 1;
+}
+
+#main-container h2 {
+  position: absolute;
+  font-size: 5rem;
+  letter-spacing: 3px;
+  word-spacing: 5px;
+  line-height: 280px;
+  white-space: nowrap;
+  animation: animate 60s linear infinite;
+  font-family: 'Kanit', sans-serif;
+  opacity: 0;
+  transition: 1s ease-in;
+}
+
+#main-container h2[data-scroll="in"] {
+  opacity: 1;
+}
+
+@keyframes  animate {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+
+}
+
+@media screen and (min-width:800px) {
+
+  #main-container {
+    height: 640px;
+  }
+
+  #left-main img {
+    width: 100%;
+    height: auto;
+  }
+
+  #main-container h2 {
+    line-height: 640px;
+    font-size: 12em;
+  }
+
+}
+
+/* Intro Css */
+
+.main-head {
+  box-sizing: content-box;
+  margin: 10px 30px;
+  padding: 5px;
+}
+
+.main-head h5 {
+  color:#ccc;
+  margin: 10px 25px;
+  opacity: 0;
+  transition: 1s ease-in;
+}
+
+.main-head h5[data-scroll="in"] {
+  opacity: 1;
+}
+
+.main-head .header-light {
+  color:#ccc;
+  margin: 50px 5px 5px 10px;
+}
+
+.main-head .header-light .links {
+  margin: 50px 25px;
+  padding: 5px 0;
+}
+
+/* Case Study */
+
+.case {
+  margin: 60px 0 20px 25px;
+  padding: 5px;
+}
+
+.case h5 {
+  color:#ccc;
+  opacity: 0;
+  transition: 1s ease-in;
+}
+
+.case h5[data-scroll="in"] {
+  opacity: 1;
+}
+
+.case .large {
+  margin-top: 15px;
+}
+
+/* --------------------------------- */
+
+.div-me {
+  color:#ccc;
+  margin: 40px 0  20px 25px;
+}
+
+.div-1 h4 {
+  color:#ccc;
+  opacity: 0;
+  transition: 1s ease-in;
+}
+
+.div-1 h4[data-scroll="in"] {
+  opacity: 1;
+}
+
+.div-1 h3 {
+  color:#ccc;
+  margin-top: 60px;
+  opacity: 0;
+  transition: 1s ease-in;
+}
+
+.div-1 h3[data-scroll="in"] {
+  opacity: 1;
+}
+
+
+.div-1 {
+  margin: 30px 25px;
+  padding: 0px 0px;
+}
+
+.services , .contact {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0 40px 25px;
+}
+
+.services h3 , h5 {
+  color:#ccc;
+  opacity: 0;
+  transition: 1s ease-in ;
+}
+
+.services h3, h5[data-scroll="in"] {
+  opacity: 1;
+}
+
+.contact {
+  height: 20vh;
+  margin: auto 25px;
+}
+
+.contact h1, h5 {
+  opacity: 0;
+  transition: 1s ease-in;
+}
+
+.contact h1, h5[data-scroll="in"] {
+  opacity: 1;
+}
+
+.contact h1 {
+  display: flex;
+  height: 10vh;
+}
+
+.contact h5 {
+  color: #000;
+}
+
+
+
+@media screen and (min-width:800px) {
+
+
+  #main-container h2:nth-child(1) {
+
+    -webkit-text-stroke: 4px;
+    -webkit-text-stroke-color: #fff;
+    -webkit-text-fill-color: transparent;
+
+  }
+
+  #main-container h2 {
+    position: absolute;
+    font-size: 6rem;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    line-height: 700px;
+    white-space: nowrap;
+    animation: animate 40s linear infinite;
+    font-family: 'Kanit', sans-serif;
+  }
+
+}

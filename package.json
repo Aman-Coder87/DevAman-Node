@@ -1,0 +1,16 @@
+{
+  "name": "devaman",
+  "version": "1.0.0",
+  "description": "Official static website converting to Dynimic node project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DevAman",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "express": "^4.17.1",
+    "hbs": "^4.1.1"
+  }
+}

@@ -1,0 +1,553 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: moz-border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hamburger menu Button CSS */
+
+.sidebar {
+  position: fixed;
+  width: 240px;
+  left: -240px;
+  height: 100%;
+  background: #1e1e1e;
+  transition: all .5s ease;
+  z-index: 9999;
+}
+
+.sidebar header {
+  font-size: 28px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #1b1b1b;
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 9999;
+}
+
+.sidebar a {
+  display: block;
+  height: 65px;
+  width: 100%;
+  color: white;
+  line-height: 65px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-left: 5px solid transparent;
+  font-family: 'Open Sans', sans-serif;
+  transition: all .5s ease;
+  z-index: 9999;
+  text-decoration: none;
+}
+
+a.active,a:hover {
+  border-left: 5px solid #b93632;
+  color: #b93632;
+  z-index: 9999;
+}
+
+.sidebar a i {
+  font-size: 23px;
+  margin-right: 16px;
+  z-index: 9999;
+}
+
+.sidebar a span {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 9999;
+}
+
+#check {
+  display: none;
+}
+
+label #btn,label #cancel {
+  position: fixed;
+  cursor: pointer;
+  color: white;
+  border-radius: 0px;
+  margin-left: auto;
+  border: 1px rgba(0,0,0,0.3);
+  margin: 15px 30px;
+  font-size: 29px;
+  background: rgba(0,0,0,0.3);
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  line-height: 45px;
+  transition: all .5s ease;
+  z-index: 9999;
+}
+
+label #cancel {
+  opacity: 0;
+  visibility: hidden;
+  background:rgba(130,10,10,0.8) ;
+}
+#check:checked ~ .sidebar {
+  left: -30px;
+}
+#check:checked ~ label #btn {
+  margin-left: 245px;
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ label #cancel {
+  margin-left: 245px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Advance MenuBar MediaQuery */
+
+/*
+
+@media(max-width : 860px){
+  .sidebar{
+    height: auto;
+    width: 70px;
+    left: 0;
+    margin: 100px 0;
+  }
+  header,#btn,#cancel{
+    display: none;
+  }
+  span{
+    position: absolute;
+    margin-left: 23px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .sidebar a{
+    height: 60px;
+  }
+  .sidebar a i{
+    margin-left: -10px;
+  }
+  a:hover {
+    width: 200px;
+    background: inherit;
+  }
+  .sidebar a:hover span{
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+*/
+
+
+/* --------------------------------- */
+
+/* ---- landing page My image CSS ---- */
+
+#main-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  box-sizing: content-box;
+  background: #fff;
+}
+
+.left-main {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  background: #fff;
+}
+
+.left-main img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  background-size: cover;
+  overflow: hidden;
+  overflow-x: wrap;
+}
+
+.right-main {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #000;
+}
+
+.right-main h2 {
+  color: #000;
+}
+
+#main-container h2:nth-child(1) {
+
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: #fff;
+  -webkit-text-fill-color: transparent;
+
+}
+
+#main-container h2 {
+  position: absolute;
+  font-size: 5rem;
+  letter-spacing: 3px;
+  word-spacing: 5px;
+  line-height: 280px;
+  white-space: nowrap;
+  animation: animate 60s linear infinite;
+  font-family: 'Kanit', sans-serif;
+}
+
+@keyframes  animate {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+
+}
+
+@media screen and (min-width:800px) {
+
+  #main-container {
+    height: 640px;
+  }
+
+  #left-main img {
+    width: 100%;
+    height: auto;
+  }
+
+  #main-container h2 {
+    line-height: 700px;
+    font-size: 12em;
+  }
+
+}
+/* --------------------------------- */
+
+.div-1 {
+  margin: 50px 0 30px 25px;
+}
+
+.div-1 h5 {
+  color:#ccc;
+  margin-bottom: 20px;
+  opacity: 0;
+  transition: 1s ease-in;
+}
+
+.div-1 h5[data-scroll="in"] {
+  opacity: 1;
+}
+
+/* ------------------------------- */
+
+.main-field {
+  margin: 30px 0 40px 25px;
+}
+
+.field {
+  margin: 20px 25px 20px 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-field .field label {
+  color:#ccc;
+  margin-bottom: 30px;
+  margin-left: -5px;
+}
+
+.main-field .field input {
+  border: .1px solid #fff;
+  width: 90%;
+}
+
+.main-field .field span {
+  border: .5px solid#ccc;
+  width: 90%;
+  margin-bottom: 50px;
+}
+
+/* ------------------------------- */
+/*
+.contact-section {
+	background: #fff;
+	padding: 80px 0;
+	text-align: center;
+}
+
+.inner-width {
+	max-width: 600px;
+	margin: auto;
+	padding: 0 20px;
+}
+
+
+
+.name , .email , .message {
+	background: none;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid;
+	color: #888;
+	padding: 10px 6px;
+	font-size: 14px;
+	margin-bottom: 40px;
+}
+
+.name {
+	float: left;
+	width: 270px;
+}
+
+.email {
+	float: right;
+	width: 270px;
+}
+
+.message {
+	min-width: 100%;
+	max-width: 100%;
+}
+
+.contact-section button {
+	background: none;
+	color:#70a1ff ;
+	border: 1px solid #70a1ff;
+	padding: 17px 40px;
+	border-radius: 4px;
+	text-transform:uppercase;
+	font-size:14px;
+	transition: 0.4s linear;
+}
+
+@media screen and (max-width:768px) {
+	.name , .email {
+		width: 150px;
+	}
+}
+
+/* --------------------------------- */
+
+
+#getintouch {
+  margin: 25px;
+  padding: 5px;
+}
+
+#getintouch h3 {
+  font-size: 1.5rem;
+  margin: 10px 0 25px 0;
+  opacity: 0;
+  transition: 1s ease-in ;
+}
+
+#getintouch h3[data-scroll="in"] {
+  opacity: 1;
+}
+
+#getintouch p {
+  margin: 10px 0;
+  color:#ccc;
+  opacity: 0;
+  transition: 1s ease-in;
+}
+
+#getintouch p[data-scroll="in"] {
+  opacity: 1;
+}
+
+#getintouch ul {
+  opacity: 0;
+  transition: 1s ease-in;
+}
+
+#getintouch ul[data-scroll="in"] {
+  opacity: 1;
+}
+
+#getintouch i {
+  margin: 5px 30px 5px 0;
+  padding: 10px;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  border: 1px #fff;
+  background: #fff;
+}
+
+#getintouch .contact-links {
+  margin: 30px 0;
+  padding: 10px;
+}
+
+#getintouch .contact-links li {
+  list-style: none;
+  margin: 10px 0;
+}
+
+@media screen and (min-width:800px) {
+
+  .main-card {
+    display: flex;
+  }
+
+  .main-card .card {
+    margin: 0 10px;
+  }
+
+
+  #wrapper {
+    margin-top: 150px;
+  }
+
+}
+
+@media screen and (max-width:768px) {
+
+  .main-card {
+    flex-direction: column;
+  }
+
+}
+
+.main-field div {
+  opacity: 0;
+  transition: 1s ease-in;
+}
+
+.main-field div[data-scroll="in"] {
+  opacity: 1;
+}
+
+.contact-button {
+  margin: 15px 0 80px 30vw;
+}
+
+.contact-button a {
+  border: 2px solid #000;
+  padding: 15px 25px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  transition: 0.5s ease-out;
+  font-size: .8rem;
+}
+
+.contact-button a:hover {
+  background: #000;
+  color: #fff;
+}
+
+
+/* --------------------------------- */
+
+.wrapper {
+  width: auto;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  overflow-x: hidden;
+}
+
+.wrapper .button {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin: 10px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover {
+  width: 200px;
+}
+.wrapper .button .icon {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  border-radius: 50px;
+  box-sizing: border-box;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1):hover .icon {
+  background: #4267B2;
+}
+
+.wrapper .button:nth-child(2):hover .icon {
+  background: #333;
+}
+.wrapper .button:nth-child(3):hover .icon {
+  background: #ff0000;
+}
+.wrapper .button .icon i {
+  font-size: 25px;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover .icon i {
+  color: #fff;
+}
+.wrapper .button span {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 60px;
+  margin-left: 10px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1) span {
+  color: #4267B2;
+}
+
+.wrapper .button:nth-child(2) span {
+  color: #333;
+}
+.wrapper .button:nth-child(3) span {
+  color: #ff0000;
+}
+
+
+
+@media screen and (min-width:800px) {
+
+
+  #main-container h2:nth-child(1) {
+
+    -webkit-text-stroke: 4px;
+    -webkit-text-stroke-color: #fff;
+    -webkit-text-fill-color: transparent;
+
+  }
+
+  #main-container h2 {
+    position: absolute;
+    font-size: 6rem;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    line-height: 700px;
+    white-space: nowrap;
+    animation: animate 40s linear infinite;
+    font-family: 'Kanit', sans-serif;
+  }
+
+}
